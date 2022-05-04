@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "devopsclusteraks-a101"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "devopsclusteraks-a101"
+  template:
+    metadata:
+      labels:
+        app: "devopsclusteraks-a101"
+    spec:
+      containers:
+        - name: "devopsclusteraks-a101"
+          image: "myacr4568975.azurecr.io/devopsclusteraks"
+          ports:
+          - containerPort: 80
